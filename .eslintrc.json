@@ -26,5 +26,5 @@
       "rules": { "no-param-reassign": ["error", { "props": false }] }
     }
   ],
-  "ignorePatterns": ["dist/", "build/"]
+  "ignorePatterns": ["dist/", "build/", "Components/", "pages/"]
 }
