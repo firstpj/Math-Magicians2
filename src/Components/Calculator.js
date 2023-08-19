@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import CalculatorButton from './CalculatorButton';
 import './Calculator.css';
-import calculate from '../logic/calculate';
+import Button from './Button';
+import Calculate from './Calculate';
 
 const Calculator = () => {
   const [calculatorData, setCalculatorData] = useState({
@@ -9,46 +9,37 @@ const Calculator = () => {
     next: null,
     operation: null,
   });
-  const handleClick = (buttonName) => {
-    const updatedCalculatorData = calculate(calculatorData, buttonName);
-    setCalculatorData(updatedCalculatorData);
+
+  const handleButtonClick = (value) => {
+    const newCalculatorData = Calculate(calculatorData, value);
+    setCalculatorData(newCalculatorData);
   };
-  const buttons = [
-    { text: 'AC', className: 'gray', click: () => handleClick('AC') },
-    { text: '+/-', className: 'gray', click: () => handleClick('+/-') },
-    { text: '%', className: 'gray', click: () => handleClick('%') },
-    { text: '/', className: 'orange', click: () => handleClick('/') },
-    { text: 7, className: 'gray', click: () => handleClick('7') },
-    { text: 8, className: 'gray', click: () => handleClick('8') },
-    { text: 9, className: 'gray', click: () => handleClick('9') },
-    { text: 'x', className: 'orange', click: () => handleClick('x') },
-    { text: 4, className: 'gray', click: () => handleClick('4') },
-    { text: 5, className: 'gray', click: () => handleClick('5') },
-    { text: 6, className: 'gray', click: () => handleClick('6') },
-    { text: '-', className: 'orange', click: () => handleClick('-') },
-    { text: 1, className: 'gray', click: () => handleClick('1') },
-    { text: 2, className: 'gray', click: () => handleClick('2') },
-    { text: 3, className: 'gray', click: () => handleClick('3') },
-    { text: '+', className: 'orange', click: () => handleClick('+') },
-    { text: 0, className: 'gray w-2', click: () => handleClick('0') },
-    { text: '.', className: 'gray', click: () => handleClick('.') },
-    { text: '=', className: 'orange', click: () => handleClick('=') },
-  ];
+  const renderButton = (value, className) => (
+    <Button key={value} value={value} className={className} onClick={handleButtonClick} />
+  );
+
   return (
-    <div>
-      <div className="input-section">
-        <input type="text" value={calculatorData.next || calculatorData.total || '0'} id="txtInput" />
-      </div>
-      <div className="button-section">
-        {buttons.map((b) => (
-          <CalculatorButton
-            key={b.text}
-            text={b.text}
-            className={b.className}
-            click={b.click}
-          />
-        ))}
-      </div>
+    <div className="calculator">
+      <div className="button output dark-gray">{calculatorData.next || calculatorData.total || '0'}</div>
+      {renderButton('AC', 'button')}
+      {renderButton('+/-', 'button')}
+      {renderButton('%', 'button')}
+      {renderButton('/', 'button orange')}
+      {renderButton('7', 'button')}
+      {renderButton('8', 'button')}
+      {renderButton('9', 'button')}
+      {renderButton('*', 'button orange')}
+      {renderButton('4', 'button')}
+      {renderButton('5', 'button')}
+      {renderButton('6', 'button')}
+      {renderButton('-', 'button orange')}
+      {renderButton('1', 'button')}
+      {renderButton('2', 'button')}
+      {renderButton('3', 'button')}
+      {renderButton('+', 'button orange')}
+      {renderButton('0', 'button zero')}
+      {renderButton('.', 'button')}
+      {renderButton('=', 'button orange equals-btn')}
     </div>
   );
 };
