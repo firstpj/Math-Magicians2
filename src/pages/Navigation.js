@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import './Navigation.css';
 import { Link } from 'react-router-dom';
 
