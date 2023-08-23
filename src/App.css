@@ -37,3 +37,167 @@
     transform: rotate(360deg);
   }
 }
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  margin-top: 10%;
+}
+
+.homepage h2 {
+  font-size: 2em;
+  color: #ff8000;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8em;
+  text-align: justify;
+  padding: 2%;
+  box-shadow: 0 0 10px 0;
+}
+
+#main {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10%;
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: #f99028;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 2%;
+  font-size: 2em;
+  margin-top: 10%;
+}
+
+.quote h2 {
+  color: #ff8000;
+  text-align: center;
+}
+
+.quote-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  box-shadow: 0 0 10px 0;
+  padding: 2%;
+}
+
+blockquote {
+  text-align: justify;
+}
+
+.quote p {
+  font-size: 1.1em;
+  text-align: right;
+  font-weight: 700;
+  color: #91929c;
+}
+
+.calcul {
+  width: 50%;
+  box-shadow: 0 0 10px 0;
+}
+
+#main h2 {
+  font-size: 2em;
+  color: #ff8000;
+}
+
+.result {
+  background: #91929c;
+  font-size: 2em;
+  padding: 3% 1%;
+  color: white;
+  text-align: right;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid #e6e6e6;
+}
+
+button {
+  background: #e0e0e0;
+  border: none;
+  padding: 24px 4px;
+  font-size: 1.1em;
+  font-weight: 700;
+  border-right: 1px solid #e6e6e6;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #c4c4c4;
+}
+
+.row button:last-child {
+  border-right: none;
+}
+
+.row button:last-child:hover {
+  background: #ff8000;
+}
+
+.orange {
+  background: #f99028;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+.app {
+  padding: 10% 10% 5% 10%;
+  background-color: #f8f8f8;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 10%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 10px 0;
+  z-index: 3;
+}
+
+.navbar-title {
+  font-size: 2.5em;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.7em;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}

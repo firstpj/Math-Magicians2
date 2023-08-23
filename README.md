@@ -1,5 +1,3 @@
-<a name="readme-top"></a>
-
 <div align="center">
     <br/>
 
@@ -86,8 +84,7 @@ Install this project with:
 ### Lauch
 
 To run the project:
-- Go to `/src/components/quotes.js`.
-- Replace API key with yours in a `.conf` file.
+- Go to `/src`.
 - Then, execute the following command: npm start
 
 ### Run tests
@@ -121,13 +118,14 @@ You can deploy this project using: GitHub Pages.
 - GitHub: [@firstpj](https://github.com/firstpj)
 - Twitter: [@AkordaC](https://twitter.com/AkordaC)
 - LinkedIn: [Collins Akorda](https://www.linkedin.com/in/collins-akorda-bb46b2232/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Create Responsive Web Design]**
+- [ ] **Create Responsive Web Design**
 
 ## 🤝 Contributing <a name="contributing"></a>
 Contributions, issues, and feature requests are welcome!
