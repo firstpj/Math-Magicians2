@@ -103,6 +103,9 @@ npx stylelint "**/*.{css,scss}"
 npx eslint .
 ```
 
+## 🚀 Live Demo <a name="live-demo"></a>
+- **[live demo link](https://math-magician-7aoj.onrender.com)**
+
 ### Deployment <a name="deployment"></a>
 
 You can deploy this project using: GitHub Pages.
@@ -112,7 +115,6 @@ You can deploy this project using: GitHub Pages.
 
 ## 👥 Author <a name="authors"></a>
 
-👤
 👤 ***Collins Akorda**
 
 - GitHub: [@firstpj](https://github.com/firstpj)
