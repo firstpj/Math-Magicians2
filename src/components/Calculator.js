@@ -1,53 +1,46 @@
 import React, { useState } from 'react';
+import './Calculator.css';
 import Button from './Button';
-import calculate from '../logic/calculate';
-import '../App.css';
+import Calculate from './Calculate';
 
 const Calculator = () => {
-  const [calculation, setCalculation] = useState({});
+  const [calculatorData, setCalculatorData] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-  const handleClick = (buttonName) => {
-    const newCalculation = calculate(calculation, buttonName);
-    setCalculation(newCalculation);
+  const handleButtonClick = (value) => {
+    const newCalculatorData = Calculate(calculatorData, value);
+    setCalculatorData(newCalculatorData);
   };
+  const renderButton = (value, className) => (
+    <Button key={value} value={value} className={className} onClick={handleButtonClick} />
+  );
 
   return (
-    <div id="main">
-      <h2>Let&apos;s do some math!</h2>
-      <div className="calcul">
-        <div className="result">{calculation.next || calculation.total || '0'}</div>
-        <div className="row">
-          <Button label="AC" onClick={() => handleClick('AC')} />
-          <Button label="+/-" onClick={() => handleClick('+/-')} />
-          <Button label="%" onClick={() => handleClick('%')} />
-          <Button label="÷" type="orange" onClick={() => handleClick('÷')} />
-        </div>
-        <div className="row">
-          <Button label="7" onClick={() => handleClick('7')} />
-          <Button label="8" onClick={() => handleClick('8')} />
-          <Button label="9" onClick={() => handleClick('9')} />
-          <Button label="x" type="orange" onClick={() => handleClick('x')} />
-        </div>
-        <div className="row">
-          <Button label="4" onClick={() => handleClick('4')} />
-          <Button label="5" onClick={() => handleClick('5')} />
-          <Button label="6" onClick={() => handleClick('6')} />
-          <Button label="-" type="orange" onClick={() => handleClick('-')} />
-        </div>
-        <div className="row">
-          <Button label="1" onClick={() => handleClick('1')} />
-          <Button label="2" onClick={() => handleClick('2')} />
-          <Button label="3" onClick={() => handleClick('3')} />
-          <Button label="+" type="orange" onClick={() => handleClick('+')} />
-        </div>
-        <div className="row">
-          <Button label="0" type="zero" onClick={() => handleClick('0')} />
-          <Button label="." onClick={() => handleClick('.')} />
-          <Button label="=" type="orange" onClick={() => handleClick('=')} />
-        </div>
-      </div>
+    <div className="calculator">
+      <div className="button output dark-gray">{calculatorData.next || calculatorData.total || '0'}</div>
+      {renderButton('AC', 'button')}
+      {renderButton('+/-', 'button')}
+      {renderButton('%', 'button')}
+      {renderButton('/', 'button orange')}
+      {renderButton('7', 'button')}
+      {renderButton('8', 'button')}
+      {renderButton('9', 'button')}
+      {renderButton('*', 'button orange')}
+      {renderButton('4', 'button')}
+      {renderButton('5', 'button')}
+      {renderButton('6', 'button')}
+      {renderButton('-', 'button orange')}
+      {renderButton('1', 'button')}
+      {renderButton('2', 'button')}
+      {renderButton('3', 'button')}
+      {renderButton('+', 'button orange')}
+      {renderButton('0', 'button zero')}
+      {renderButton('.', 'button')}
+      {renderButton('=', 'button orange equals-btn')}
     </div>
   );
 };
-
 export default Calculator;
