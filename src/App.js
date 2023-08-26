@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import QuotePage from './pages/QuotePage';
 import './App.css';
-import Layout from './Components/Layout/Layout';
-import Calculator from './Components/Calculator';
+import Layout from './components/Layout/Layout';
+import Calculator from './components/Calculator';
 
 function App() {
   return (
